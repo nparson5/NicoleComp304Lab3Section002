@@ -1,13 +1,13 @@
-package nicole.parsons.s300941374.ui.notifications
+package nicole.parsons.s300941374.ui.s300941374
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class NotificationsViewModel : ViewModel() {
+class S300941374ViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is notifications Fragment"
+        value = "This is s300941374 Fragment"
     }
     val text: LiveData<String> = _text
 }

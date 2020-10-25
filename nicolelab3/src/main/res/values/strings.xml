@@ -1,6 +1,17 @@
 <resources>
     <string name="app_name">NicoleLab3</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">Paint</string>
+    <string name="title_dashboard">Animation 1</string>
+    <string name="title_notifications">Animation 2</string>
+    <string name="nameId">Nicole Parsons - 300941374 - Section 002</string>
+    <string name="size3">Size 1</string>
+    <string name="size1">Size 2</string>
+    <string name="size2">Size 3</string>
+    <string name="black">Black</string>
+    <string name="red">Red</string>
+    <string name="blue">Blue</string>
+    <string name="alertMessageTitle">Exit</string>
+    <string name="alertMessage">Are you sure you want to exit?</string>
+    <string name="ok">OK</string>
+    <string name="cancel">CANCEL</string>
 </resources>

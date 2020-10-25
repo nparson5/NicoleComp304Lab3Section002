@@ -6,17 +6,84 @@
     android:layout_height="match_parent"
     tools:context=".ui.nicole.NicoleFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
+    <nicole.parsons.s300941374.ui.nicole.NicoleCanvasView
+        android:id="@+id/nicoleCanvasView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nicoleTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="casual"
+        android:text="@string/nameId"
+        android:textAlignment="center"
+        android:textStyle="bold|italic"
+        android:typeface="serif"
+        app:layout_constraintEnd_toStartOf="@+id/nicoleCanvasView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/nicoleSizeRg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nicoleTv">
+
+        <RadioButton
+            android:id="@+id/nicoleSize3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/size3"/>
+
+        <RadioButton
+            android:id="@+id/nicoleSize1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/size1" />
+
+        <RadioButton
+            android:id="@+id/nicoleSize2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/size2" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/nicoleColorRg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/nicoleSizeRg"
+        app:layout_constraintTop_toBottomOf="@id/nicoleTv">
+
+        <RadioButton
+            android:id="@+id/nicoleColor3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/black"/>
+
+        <RadioButton
+            android:id="@+id/nicoleColor1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/red" />
+
+        <RadioButton
+            android:id="@+id/nicoleColor2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/blue" />
+    </RadioGroup>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

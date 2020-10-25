@@ -1,4 +1,4 @@
-package nicole.parsons.s300941374.ui.notifications
+package nicole.parsons.s300941374.ui.s300941374
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import nicole.parsons.s300941374.R
 
-class NotificationsFragment : Fragment() {
+class S300941374Fragment : Fragment() {
 
-    private lateinit var notificationsViewModel: NotificationsViewModel
+    private lateinit var s300941374ViewModel: S300941374ViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        notificationsViewModel =
-            ViewModelProviders.of(this).get(NotificationsViewModel::class.java)
+        s300941374ViewModel =
+            ViewModelProviders.of(this).get(S300941374ViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_notifications, container, false)
         val textView: TextView = root.findViewById(R.id.text_notifications)
-        notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
+        s300941374ViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

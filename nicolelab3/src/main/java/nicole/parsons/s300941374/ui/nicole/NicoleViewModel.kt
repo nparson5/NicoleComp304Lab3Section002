@@ -10,4 +10,16 @@ class NicoleViewModel : ViewModel() {
         value = "This is nicole Fragment"
     }
     val text: LiveData<String> = _text
+
+
+
+
+
+
+
+
+
+
+
+
 }
