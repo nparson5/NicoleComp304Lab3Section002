@@ -5,6 +5,8 @@ import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
@@ -21,7 +23,7 @@ class NicoleActivity : AppCompatActivity() ,
 
 
   //  private  lateinit var nicoleCanvasView: NicoleCanvasView
-
+  public var an: Animation? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nicole)
@@ -40,11 +42,16 @@ class NicoleActivity : AppCompatActivity() ,
 
 
 
+
         /*
         */
 
     }
 
+    public fun setAnim(): Animation? {
+        an = AnimationUtils.loadAnimation(this, R.anim.revolve)
+return an
+    }
 
     override fun onCheckedChanged(rg: RadioGroup, checkedId: Int) {
 

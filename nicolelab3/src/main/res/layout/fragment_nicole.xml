@@ -38,23 +38,24 @@
         android:id="@+id/nicoleSizeRg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:checkedButton="@id/nicoleSize2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nicoleTv">
-
-        <RadioButton
-            android:id="@+id/nicoleSize3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/size3"/>
 
         <RadioButton
             android:id="@+id/nicoleSize1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/size1" />
+            android:text="@string/size3" />
 
         <RadioButton
             android:id="@+id/nicoleSize2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/size1" />
+
+        <RadioButton
+            android:id="@+id/nicoleSize3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/size2" />
@@ -64,14 +65,15 @@
         android:id="@+id/nicoleColorRg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/nicoleSizeRg"
+        android:checkedButton="@id/nicoleColor1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nicoleTv">
 
         <RadioButton
-            android:id="@+id/nicoleColor3"
+            android:id="@+id/nicoleColor2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/black"/>
+            android:text="@string/black" />
 
         <RadioButton
             android:id="@+id/nicoleColor1"
@@ -80,10 +82,19 @@
             android:text="@string/red" />
 
         <RadioButton
-            android:id="@+id/nicoleColor2"
+            android:id="@+id/nicoleColor3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/blue" />
     </RadioGroup>
+
+    <Button
+        android:id="@+id/nicoleClearBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:text="@string/clear"
+        app:layout_constraintBottom_toBottomOf="@id/nicoleCanvasView"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

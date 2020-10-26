@@ -21,5 +21,5 @@
         android:id="@+id/navigation_notifications"
         android:name="nicole.parsons.s300941374.ui.s300941374.S300941374Fragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_s300941374" />
 </navigation>

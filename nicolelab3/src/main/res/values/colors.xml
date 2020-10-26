@@ -8,5 +8,9 @@
     <color name="colorBg2">#79FFAFD2</color>
     <color name="colorBg3">#000000</color>
 
+    <color name="red">#FF0000</color>
+    <color name="black">#000000</color>
+    <color name="blue">#1A1F6A</color>
+
     <color name="colorPaint">#000000</color>
 </resources>
