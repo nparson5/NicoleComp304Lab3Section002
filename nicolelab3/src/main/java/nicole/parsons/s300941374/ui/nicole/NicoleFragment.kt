@@ -46,6 +46,11 @@ class NicoleFragment : Fragment() {
             ft.detach(this).attach(this).commit()
         }
 
+        val updateBtn: Button = root.findViewById<Button>(R.id.nicoleUpdateBtn)
+        updateBtn.setOnClickListener {
+            update()
+        }
+
 
 
         return root
@@ -58,19 +63,21 @@ class NicoleFragment : Fragment() {
             //frameDuration = (5*1000/21)//5 seconds, 1000ms per second, 21 frames
 
             // Toast.makeText(view?.context, "Button Clicked", Toast.LENGTH_LONG).show()
-            nicoleCanvasView.paint.strokeWidth = 3f
+            //nicoleCanvasView.paint.strokeWidth = 3f//this way of updating properties directly is easier than using a button.
+            nicoleCanvasView.penWidth =
+                3f//must update properties indirectly in accordance with the assignment specs.
         }
         if (nicoleSize2.isChecked) {
             // frameDuration = (3*1000/21)
 
            // Toast.makeText(view?.context, "Button Clicked", Toast.LENGTH_LONG).show()
-            nicoleCanvasView.paint.strokeWidth = 10f
+            nicoleCanvasView.penWidth = 10f
         }
 
         if (nicoleSize3.isChecked) {
 
          //   Toast.makeText(view?.context, "Button Clicked", Toast.LENGTH_LONG).show()
-           nicoleCanvasView.paint.strokeWidth = 60f
+            nicoleCanvasView.penWidth = 60f
         }
 
 
@@ -82,26 +89,28 @@ class NicoleFragment : Fragment() {
             //frameDuration = (5*1000/21)//5 seconds, 1000ms per second, 21 frames
 
             // Toast.makeText(view?.context, "Button Clicked", Toast.LENGTH_LONG).show()
-            nicoleCanvasView.paint.color = ResourcesCompat.getColor(resources, R.color.red, null)
+            nicoleCanvasView.penColour = ResourcesCompat.getColor(resources, R.color.red, null)
         }
         if (nicoleColor2.isChecked) {
             // frameDuration = (3*1000/21)
 
             // Toast.makeText(view?.context, "Button Clicked", Toast.LENGTH_LONG).show()
-            nicoleCanvasView.paint.color = ResourcesCompat.getColor(resources, R.color.black, null)
+            nicoleCanvasView.penColour = ResourcesCompat.getColor(resources, R.color.black, null)
         }
 
         if (nicoleColor3.isChecked) {
 
             //   Toast.makeText(view?.context, "Button Clicked", Toast.LENGTH_LONG).show()
-            nicoleCanvasView.paint.color = ResourcesCompat.getColor(resources, R.color.blue, null)
+            nicoleCanvasView.penColour = ResourcesCompat.getColor(resources, R.color.blue, null)
         }
 
 
     }
 
+    private fun update() {
+        nicoleCanvasView.updatePen()//only update properties when user clicks update
 
-
+    }
 
 
 

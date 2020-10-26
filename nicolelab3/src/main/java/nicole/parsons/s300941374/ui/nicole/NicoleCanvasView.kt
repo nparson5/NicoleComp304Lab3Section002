@@ -19,26 +19,29 @@ class NicoleCanvasView @JvmOverloads constructor(
         defStyle: Int = 0
     ) : View(context, attrs, defStyle) {
 
-    private val defaultWidth = 12f//default pen width
+    private val black = ResourcesCompat.getColor(resources, R.color.black, null)
+
+    //player can update
+    var penWidth = 12f//default pen width
+    var penColour = black//default pen width
 
     private var path = Path()//what the user is drawing
 
-    private val black = ResourcesCompat.getColor(resources, R.color.black, null)
-    private val white = ResourcesCompat.getColor(resources, R.color.white, null)
 
+    private val transparent = ResourcesCompat.getColor(resources, R.color.transparent, null)
     private lateinit var extraCanvas: Canvas
     private lateinit var extraBitmap: Bitmap
 
 
     //everything about the brush
     val paint = Paint().apply {
-        color = black
+        color = penColour
         isAntiAlias = true
         isDither = true
         style = Paint.Style.STROKE
         strokeJoin = Paint.Join.ROUND
         strokeCap = Paint.Cap.ROUND
-        strokeWidth = defaultWidth
+        strokeWidth = penWidth
     }
 
         private val touchTolerance = ViewConfiguration.get(context).scaledTouchSlop//to avoid drawing extra unecessary pixels
@@ -56,7 +59,7 @@ class NicoleCanvasView @JvmOverloads constructor(
             if (::extraBitmap.isInitialized) extraBitmap.recycle()
             extraBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
             extraCanvas = Canvas(extraBitmap)
-            extraCanvas.drawColor(white)
+            extraCanvas.drawColor(transparent)
 
         }
 
@@ -106,10 +109,15 @@ class NicoleCanvasView @JvmOverloads constructor(
             invalidate()
         }
 
-        private fun touchUp() {
-            // Reset path
-            path.reset()
-        }
-
-
+    private fun touchUp() {
+        // Reset path
+        path.reset()
     }
+
+    fun updatePen() {
+        paint.color = penColour
+        paint.strokeWidth = penWidth
+    }
+
+
+}

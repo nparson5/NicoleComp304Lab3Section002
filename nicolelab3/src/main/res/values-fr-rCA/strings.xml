@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?><!--Nicole Parsons - 300941374 - Section 002-->
+<resources>
+    <string name="app_name">NicoleLab3</string>
+    <string name="title_home">" Peindre"</string>
+    <string name="title_dashboard">" Animation image par image"</string>
+    <string name="title_notifications">Animation Tween</string>
+    <string name="size3">Petite</string>
+    <string name="size1">" Moyenne"</string>
+    <string name="size2">" Grande"</string>
+    <string name="black">" Noire"</string>
+    <string name="red">" Rouge"</string>
+    <string name="blue">" Bleue"</string>
+    <string name="alertMessageTitle">" Sortie"</string>
+    <string name="alertMessage">" Êtes-vous sûr de vouloir quitter?"</string>
+    <string name="ok">D\'accord</string>
+    <string name="cancel">" Annuler"</string>
+    <string name="start">" Début"</string>
+    <string name="stop">" Arrêtez"</string>
+    <string name="Slow">Lente</string>
+    <string name="Normal">Ordinaire</string>
+    <string name="Fast">" Vite"</string>
+    <string name="Uber">" Très vite"</string>
+    <string name="clear">Claire</string>
+    <string name="permissionGranted">" Autorisations granted"</string>
+    <string name="permissionDenied">" Autorisations  denied"</string>
+    <string name="permission">" Autorisations"</string>
+    <string name="update">Update</string>
+</resources>
