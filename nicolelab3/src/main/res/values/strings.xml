@@ -26,4 +26,6 @@
     <string name="clear">Clear</string>
     <string name="imgDescription" translatable="false">Image</string>
     <string name="permission">Permission</string>
+    <string name="permissionGranted">Permission granted</string>
+    <string name="permissionDenied">Permission denied</string>
 </resources>

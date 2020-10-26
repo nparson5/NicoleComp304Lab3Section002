@@ -1,6 +1,9 @@
 package nicole.parsons.s300941374.ui.parsons
 //Nicole Parsons - 300941374 - Section 002
+
+import android.Manifest
 import android.annotation.SuppressLint
+import android.content.pm.PackageManager
 import android.graphics.drawable.AnimationDrawable
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
@@ -10,6 +13,8 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.widget.Button
 import android.widget.RadioGroup
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.fragment_parsons.*
@@ -21,6 +26,7 @@ class ParsonsFragment : Fragment() {
     var nicoleFrameAnimation: AnimationDrawable? = null
     private var frameDuration = (3 * 1000 / 21)
 
+    private val REQUEST_LOCATION = 2542
     var an: Animation? = null
 
     override fun onCreateView(
@@ -34,6 +40,8 @@ class ParsonsFragment : Fragment() {
 
 
         // Event-handlers
+
+
         val startBtn: Button = root.findViewById<Button>(R.id.nicoleStartBtn)
         startBtn.setOnClickListener {
 
@@ -57,12 +65,78 @@ class ParsonsFragment : Fragment() {
 
         val permissionsBtn: Button = root.findViewById<Button>(R.id.nicolePermissionsBtn)
         permissionsBtn.setOnClickListener {
-            TODO("Ask for permissions")
+            if (isLocationPermissionGranted()) {
+                Toast.makeText(view?.context, "Permission granted", Toast.LENGTH_LONG).show()
+            } else {
+                requestLocationPermission()
+            }
 //ask for permissions
         }
 
         return root
     }
+
+    //Overriding on permission request result method
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String?>,
+        grantResults: IntArray
+    ) {
+        if (requestCode == REQUEST_LOCATION) { //If result is for location permission request
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                if (isLocationPermissionGranted()) {
+                    Toast.makeText(view?.context, R.string.permissionGranted, Toast.LENGTH_LONG)
+                        .show()
+                }
+            } else {
+                Toast.makeText(view?.context, R.string.permissionDenied, Toast.LENGTH_SHORT).show()
+            }
+
+        }
+    }
+
+    //Function to request location permission
+    private fun requestLocationPermission() {
+        if (view?.context?.let {
+                ActivityCompat.checkSelfPermission(
+                    it,
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                )
+            } != PackageManager.PERMISSION_GRANTED && view?.context?.let {
+                ActivityCompat.checkSelfPermission(
+                    it,
+                    Manifest.permission.ACCESS_COARSE_LOCATION
+                )
+            } != PackageManager.PERMISSION_GRANTED
+        ) {
+            activity?.let {
+                ActivityCompat.requestPermissions(
+                    it,
+                    arrayOf(
+                        Manifest.permission.ACCESS_FINE_LOCATION,
+                        Manifest.permission.ACCESS_COARSE_LOCATION
+                    ),
+                    REQUEST_LOCATION
+                )
+            }
+        }
+    }
+
+    //Function to check if location permission is granted or not
+    private fun isLocationPermissionGranted(): Boolean {
+        return !(view?.context?.let {
+            ActivityCompat.checkSelfPermission(
+                it,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            )
+        } != PackageManager.PERMISSION_GRANTED && view?.context?.let {
+            ActivityCompat.checkSelfPermission(
+                it,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            )
+        } != PackageManager.PERMISSION_GRANTED)
+    }
+
 
     private fun changeSpeed() {
 
@@ -90,7 +164,7 @@ class ParsonsFragment : Fragment() {
     private fun startAnimation() {
         //21 frames
         //x duration for each frame
-
+        //Animation created with Adobe Animate
         val frame1 = context?.getDrawable(R.drawable.grim_animate_0001) as BitmapDrawable
         val frame2 = context?.getDrawable(R.drawable.grim_animate_0002) as BitmapDrawable
         val frame3 = context?.getDrawable(R.drawable.grim_animate_0003) as BitmapDrawable
@@ -117,11 +191,10 @@ class ParsonsFragment : Fragment() {
         val frame21 = context?.getDrawable(R.drawable.grim_animate_0021) as BitmapDrawable
 
         // Get the background, which has been compiled to an AnimationDrawable object.
-
         // Get the background, which has been compiled to an AnimationDrawable object.
 
         nicoleFrameAnimation = AnimationDrawable()
-        nicoleFrameAnimation!!.isOneShot = false // loop continuously
+        nicoleFrameAnimation!!.isOneShot = false // loop
 
         nicoleFrameAnimation!!.addFrame(frame1, frameDuration)
         nicoleFrameAnimation!!.addFrame(frame2, frameDuration)
