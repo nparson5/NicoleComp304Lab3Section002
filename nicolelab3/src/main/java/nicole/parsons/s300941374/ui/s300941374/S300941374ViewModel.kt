@@ -1,5 +1,5 @@
 package nicole.parsons.s300941374.ui.s300941374
-
+//Nicole Parsons - 300941374 - Section 002
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

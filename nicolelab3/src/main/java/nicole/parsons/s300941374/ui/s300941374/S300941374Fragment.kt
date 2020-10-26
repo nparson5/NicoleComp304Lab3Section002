@@ -1,5 +1,5 @@
 package nicole.parsons.s300941374.ui.s300941374
-
+//Nicole Parsons - 300941374 - Section 002
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -51,11 +51,11 @@ class S300941374Fragment : Fragment() {
 
     private fun startAnimation() {
         an = AnimationUtils.loadAnimation(activity, R.anim.revolve)
-        imgEarth?.startAnimation(an)
+        nicoleImgEarth?.startAnimation(an)
     }
 
     private fun stopAnimation() {
-        imgEarth?.clearAnimation()
+        nicoleImgEarth?.clearAnimation()
     }
 
 }

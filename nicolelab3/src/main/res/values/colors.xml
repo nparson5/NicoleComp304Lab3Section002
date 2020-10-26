@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Nicole Parsons - 300941374 - Section 002-->
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="colorBackground">#4DB3EFF4</color>
+    <color name="colorBg1">#4DB3EFF4</color>
     <color name="colorBg2">#79FFAFD2</color>
     <color name="colorBg3">#000000</color>
 
     <color name="red">#FF0000</color>
     <color name="black">#000000</color>
     <color name="blue">#1A1F6A</color>
+    <color name="white">#FFFFFF</color>
 
     <color name="colorPaint">#000000</color>
 </resources>

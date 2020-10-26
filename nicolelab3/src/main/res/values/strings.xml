@@ -1,9 +1,10 @@
 <resources>
+    <!--Nicole Parsons - 300941374 - Section 002-->
     <string name="app_name">NicoleLab3</string>
     <string name="title_home">Paint</string>
-    <string name="title_dashboard">Animation 1</string>
-    <string name="title_notifications">Animation 2</string>
-    <string name="nameId">Nicole Parsons - 300941374 - Section 002</string>
+    <string name="title_dashboard">Animation Frame-By-Frame</string>
+    <string name="title_notifications">Animation Tween</string>
+    <string name="nameId" translatable="false">Nicole Parsons - 300941374 - Section 002</string>
     <string name="size3">Small</string>
     <string name="size1">Medium</string>
     <string name="size2">Large</string>
@@ -13,9 +14,9 @@
     <string name="alertMessageTitle">Exit</string>
     <string name="alertMessage">Are you sure you want to exit?</string>
     <string name="ok">OK</string>
-    <string name="cancel">CANCEL</string>
-    <string name="lastNameId">Parsons</string>
-    <string name="nicoleFirstName">Nicole</string>
+    <string name="cancel">Cancel</string>
+    <string name="lastNameId" translatable="false">Parsons</string>
+    <string name="nicoleFirstName" translatable="false">Nicole</string>
     <string name="start">Start</string>
     <string name="stop">Stop</string>
     <string name="Slow">Slow(5 seconds)</string>
@@ -23,4 +24,6 @@
     <string name="Fast">Fast (2 second)</string>
     <string name="Uber">Uber (1 seconds)</string>
     <string name="clear">Clear</string>
+    <string name="imgDescription" translatable="false">Image</string>
+    <string name="permission">Permission</string>
 </resources>

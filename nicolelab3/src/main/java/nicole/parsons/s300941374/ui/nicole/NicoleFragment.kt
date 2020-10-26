@@ -1,5 +1,5 @@
 package nicole.parsons.s300941374.ui.nicole
-
+//Nicole Parsons - 300941374 - Section 002
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -26,45 +26,42 @@ class NicoleFragment : Fragment() {
             ViewModelProviders.of(this).get(NicoleViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_nicole, container, false)
 
-
-        val nicoleCanvasView: NicoleCanvasView = root.findViewById<NicoleCanvasView>(R.id.nicoleCanvasView) as NicoleCanvasView
-
-        val radioGroupSize : RadioGroup = root.findViewById<RadioGroup>(R.id.nicoleSizeRg)
-        radioGroupSize.setOnCheckedChangeListener { _, checkedId ->
-            changeSize(checkedId)
+        val radioGroupSize: RadioGroup = root.findViewById<RadioGroup>(R.id.nicoleSizeRg)
+        radioGroupSize.setOnCheckedChangeListener { _, _ ->
+            changeSize()
 
         }
 
-        val radioGroupColor : RadioGroup = root.findViewById<RadioGroup>(R.id.nicoleColorRg)
-        radioGroupColor.setOnCheckedChangeListener { _, checkedId ->
-            changeColor(checkedId)
+        val radioGroupColor: RadioGroup = root.findViewById<RadioGroup>(R.id.nicoleColorRg)
+        radioGroupColor.setOnCheckedChangeListener { _, _ ->
+            changeColor()
 
         }
 
-        val clearBtn : Button = root.findViewById<Button>(R.id.nicoleClearBtn)
-        clearBtn.setOnClickListener{
+        val clearBtn: Button = root.findViewById<Button>(R.id.nicoleClearBtn)
+        clearBtn.setOnClickListener {
 
             //  Toast.makeText(view?.context, "Button Clicked", Toast.LENGTH_LONG).show()
             val ft: FragmentTransaction = fragmentManager!!.beginTransaction()
             ft.detach(this).attach(this).commit()
         }
 
+
+
         return root
     }
 
 
-
-
-    private fun changeSize(checkedID: Int){
+    private fun changeSize() {
 
         if (nicoleSize1.isChecked) {
-            //reasonableDuration = (5*1000/21)//5 seconds, 1000ms per second, 21 frames
+            //frameDuration = (5*1000/21)//5 seconds, 1000ms per second, 21 frames
 
-             // Toast.makeText(view?.context, "Button Clicked", Toast.LENGTH_LONG).show()
+            // Toast.makeText(view?.context, "Button Clicked", Toast.LENGTH_LONG).show()
             nicoleCanvasView.paint.strokeWidth = 3f
         }
         if (nicoleSize2.isChecked) {
-           // reasonableDuration = (3*1000/21)
+            // frameDuration = (3*1000/21)
 
            // Toast.makeText(view?.context, "Button Clicked", Toast.LENGTH_LONG).show()
             nicoleCanvasView.paint.strokeWidth = 10f
@@ -79,16 +76,16 @@ class NicoleFragment : Fragment() {
 
     }
 
-    private fun changeColor(checkedID: Int){
+    private fun changeColor() {
 
         if (nicoleColor1.isChecked) {
-            //reasonableDuration = (5*1000/21)//5 seconds, 1000ms per second, 21 frames
+            //frameDuration = (5*1000/21)//5 seconds, 1000ms per second, 21 frames
 
             // Toast.makeText(view?.context, "Button Clicked", Toast.LENGTH_LONG).show()
             nicoleCanvasView.paint.color = ResourcesCompat.getColor(resources, R.color.red, null)
         }
         if (nicoleColor2.isChecked) {
-            // reasonableDuration = (3*1000/21)
+            // frameDuration = (3*1000/21)
 
             // Toast.makeText(view?.context, "Button Clicked", Toast.LENGTH_LONG).show()
             nicoleCanvasView.paint.color = ResourcesCompat.getColor(resources, R.color.black, null)

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Nicole Parsons - 300941374 - Section 002-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -18,7 +19,7 @@
         android:rotation="-45"
         android:text="@string/nicoleFirstName"
         android:textAlignment="center"
-        android:textColor="#FFF"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,7 +35,7 @@
         android:rotation="45"
         android:text="@string/lastNameId"
         android:textAlignment="center"
-        android:textColor="#FFF"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -70,17 +71,19 @@
         app:layout_constraintTop_toBottomOf="@+id/nicoleStartBtn">
 
         <ImageView
-            android:id="@+id/imgEarth"
+            android:id="@+id/nicoleImgEarth"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_centerHorizontal="true"
+            android:contentDescription="@string/imgDescription"
             app:srcCompat="@drawable/moon_img" />
 
         <ImageView
-            android:id="@+id/imgMoon"
+            android:id="@+id/nicoleImgMoon"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_centerInParent="true"
+            android:contentDescription="@string/imgDescription"
             app:srcCompat="@drawable/earth_img" />
     </RelativeLayout>
 

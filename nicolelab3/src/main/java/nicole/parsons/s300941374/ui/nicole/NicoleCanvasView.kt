@@ -1,7 +1,10 @@
 package nicole.parsons.s300941374.ui.nicole
-
+//Nicole Parsons - 300941374 - Section 002
 import android.content.Context
-import android.graphics.*
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Paint
+import android.graphics.Path
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
@@ -14,35 +17,29 @@ class NicoleCanvasView @JvmOverloads constructor(
         context: Context,
         attrs: AttributeSet? = null,
         defStyle: Int = 0
-    ) : View(context, attrs, defStyle)
+    ) : View(context, attrs, defStyle) {
 
-    {
+    private val defaultWidth = 12f//default pen width
 
-        private  val STROKE_WIDTH = 12f
+    private var path = Path()//what the user is drawing
 
-        private var path = Path()//what the user is drawing
+    private val black = ResourcesCompat.getColor(resources, R.color.black, null)
+    private val white = ResourcesCompat.getColor(resources, R.color.white, null)
 
-        private val drawColor = ResourcesCompat.getColor(resources, R.color.colorPaint, null)
-        private val backgroundColor = ResourcesCompat.getColor(
-            resources,
-            R.color.colorBackground,
-            null
-        )
-        private lateinit var extraCanvas: Canvas
-        private lateinit var extraBitmap: Bitmap
-        private lateinit var frame: Rect
+    private lateinit var extraCanvas: Canvas
+    private lateinit var extraBitmap: Bitmap
 
 
-        //everything about the brush
-        public val paint = Paint().apply {
-            color = drawColor
-            isAntiAlias = true
-            isDither = true
-            style = Paint.Style.STROKE
-            strokeJoin = Paint.Join.ROUND
-            strokeCap = Paint.Cap.ROUND
-            strokeWidth = STROKE_WIDTH
-        }
+    //everything about the brush
+    val paint = Paint().apply {
+        color = black
+        isAntiAlias = true
+        isDither = true
+        style = Paint.Style.STROKE
+        strokeJoin = Paint.Join.ROUND
+        strokeCap = Paint.Cap.ROUND
+        strokeWidth = defaultWidth
+    }
 
         private val touchTolerance = ViewConfiguration.get(context).scaledTouchSlop//to avoid drawing extra unecessary pixels
 
@@ -59,7 +56,7 @@ class NicoleCanvasView @JvmOverloads constructor(
             if (::extraBitmap.isInitialized) extraBitmap.recycle()
             extraBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
             extraCanvas = Canvas(extraBitmap)
-            extraCanvas.drawColor(backgroundColor)
+            extraCanvas.drawColor(white)
 
         }
 
